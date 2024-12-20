@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lit-nlp"
 # LINT.IfChange
-version = "1.3"
+version = "1.3.1"
 # LINT.ThenChange(./lit_nlp/package.json)
 authors = [
   { name="Google, LLC", email="lit-dev@google.com" }
@@ -40,7 +40,6 @@ dependencies = [
   "six>=1.16.0",
   "termcolor>=2.3.0",
   "tqdm>=4.64.0",
-  "umap-learn>=0.5.1",
   "werkzeug>=2.2.3",
 ]
 # LINT.ThenChange(./requirements.txt)
@@ -105,10 +104,14 @@ examples-generative-ai = [
   "vertexai>=1.49.0",
 ]
 # LINT.ThenChange(./requirements_examples_generative_ai.txt)
+umap = [
+  "umap-learn==0.5.6"
+]
 # LINT.IfChange
 test = [
   "lit-nlp[examples-discriminative-ai]",
   "lit-nlp[examples-generative-ai]",
+  "lit-nlp[umap]",
   "lime==0.2.0.1",
   "pytest>=7.4.0,<8.0.0",
   "webtest>=2.0",

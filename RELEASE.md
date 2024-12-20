@@ -1,5 +1,11 @@
 # Learning Interpretability Tool Release Notes
 
+
+## Release 1.3.1
+
+This is a minor update to fix issues with running the [LIT Gemma Colab](https://colab.sandbox.google.com/github/google/generative-ai-docs/blob/main/site/en/gemma/docs/lit_gemma.ipynb).
+
+
 ## Release 1.3
 
 This release updates how the Learning Interpretability Tool (LIT) can be

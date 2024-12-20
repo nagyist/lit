@@ -22,22 +22,18 @@ from lit_nlp import dev_server
 from lit_nlp import server_config
 from lit_nlp.api import layout
 from lit_nlp.lib import wsgi_serving
+from tqdm import notebook
 
 JsonDict = Mapping[str, Any]
 
-is_colab = False
 try:
   import google.colab  # pylint: disable=g-import-not-at-top,unused-import
   from google.colab import output  # pylint: disable=g-import-not-at-top,unused-import # pytype: disable=import-error
   is_colab = True
-  # Can disable import error as this package is always
-  # included in colab kernels.
-  from colabtools import interactive_widgets  # pylint: disable=g-import-not-at-top # pytype: disable=import-error
-  progress_indicator = interactive_widgets.ProgressIter
 except (ImportError, ModuleNotFoundError):
-  from tqdm import notebook  # pylint: disable=g-import-not-at-top
-  progress_indicator = notebook.tqdm
+  is_colab = False
 
+progress_indicator = notebook.tqdm
 modules = layout.LitModuleName
 
 LIT_NOTEBOOK_LAYOUT = layout.LitCanonicalLayout(

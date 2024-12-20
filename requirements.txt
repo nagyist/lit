@@ -37,6 +37,5 @@ shap>=0.42.0,<0.46.0
 six>=1.16.0
 termcolor>=2.3.0
 tqdm>=4.64.0
-umap-learn>=0.5.1
 werkzeug>=2.2.3
 # LINT.ThenChange(./pyproject.toml)
